@@ -13,9 +13,10 @@
     }
   }
 
-  let plate, pause, totalCount = 0, pie = spawnPie(), color = 100;
+  let plate, superPause, pause, totalCount = 0, pie = spawnPie(), color = 100;
 
   const id = setInterval(() => {
+    if (superPause) return;
     if (pause) return;
     document.querySelectorAll("div").forEach(e => {
       e.style['background-color']
@@ -62,7 +63,7 @@
   const start = () => pause = false;
   onMount(() => {
     document.addEventListener("keydown",({ code }) => {
-      if(code == "Space") pause = pause? 0 : 1;
+      if(code == "Space") superPause = superPause ? 0 : 1;
     })
   })
 </script>
@@ -77,6 +78,8 @@
 </main>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
   main {
     @include absolute;
     @include flex(row);
@@ -87,6 +90,7 @@
     align-items: flex-start;
     justify-content: center;
     user-select: none;
+    font-family: 'Montserrat', sans-serif;
   }
   div {
     @include shadow;

@@ -8,7 +8,8 @@ simple game i fealt like making.
 
 <br>
 
-if you want to give it a try.
+if you want to give it a try [here](https://in-the-sky.netlify.app/), <br>
+or preview locally.
 
 ```
 git clone https://github.com/AyushmanTripathy/in-the-sky
